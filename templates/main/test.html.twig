@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+<h1>Test !</h1>
+
+{# création de variable #}
+{% set name = "Maxime" %}
+{% set name2 = "WorldWideDreamer" %}
+<h2>Hello {{ name ~" Alias "~name2 }}!</h2>
+
+{#  création d'un tableau #}
+{% set colors = ['red', 'purple', 'green', 'yellow'] %}
+
+{# boucler sur un tableau #}
+{% for color in colors %}
+    <div style="Background-color:{{ color }}">{{ color }}</div>
+    {# usage de loop variable créé par fo #}
+    {% if loop.first %}
+        <div>First iteration</div>
+    {% endif %}
+
+    {# index de l'élément #}
+    <div>index of the actual element : {{ loop.index }}/{{ loop.length }}</div>
+
+    {% if loop.last %}
+        <div>Last iteration</div>
+    {% endif %}
+    {# si tableau est vide alors on passe dans le else #}
+{% else %}
+    <div>No element</div>
+{% endfor %}
+
+{# manipulation d'objet #}
+
+{% set serie = {
+    title : "Family Guy",
+    year : 1996,
+    platform : "Disney Plus"
+} %}
+
+<h2>{{ serie.title ~" in "~serie.year~" now on "~serie.platform }}</h2>
+
+{# boucler sur un objet #}
+{% for key, val in serie %}
+    <div>{{ key }} : {{ val }}</div>
+{% endfor %}
+
+{# les fliltres #}
+
+<div>{{ name2 | upper | lower | capitalize }}: {{ name2 | length }} lettres</div>
+<div>{{ colors | join(" ") }}</div>
+<div>{{ "now" | date('Y-m-d') }}</div>
+{% endblock %}
+
+{% block title %}{{ parent() }} | Test{% endblock %}
