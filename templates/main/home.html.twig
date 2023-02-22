@@ -5,5 +5,13 @@
 
 {# si je préferais le contenu, j'écrase le contenu présent dans la base #}
 {% block body %}
-    <h1>Welcome to the jean baptiste show!...OW come on</h1>
+    <h1>Welcome to the jean baptiste show {{ name }} !</h1>
+    <h2>Serie's detail</h2>
+
+    <ul>
+        {% for key, val in serie %}
+            <div>{{ key }} : {{ val }}</div>
+        {% endfor %}
+    </ul>
+
 {% endblock %}

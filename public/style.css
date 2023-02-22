@@ -1,0 +1,26 @@
+body {
+    background: linear-gradient(#071938, #EA638C);
+    background-attachment: fixed;
+    background-position: center center;
+    background-size: cover;
+    color: #FFFAFA;
+    font-family: 'Roboto', serif;
+}
+li {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+a {
+    color:#FFFAFA;
+    text-decoration: none;
+}
+a:hover{
+    color:#A4C1F4;
+}
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 5px;
+}
