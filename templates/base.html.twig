@@ -8,9 +8,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('style.css') }}">
     <link rel="icon" href="img/icon.png">
-    <title>Here we are</title>
+    <title>{% block title %}{% endblock %}</title>
+
 </head>
 <body>
+{% block styleCss %}{% endblock %}
 <main>
     <div class="container">
         <header>
@@ -23,7 +25,6 @@
         </header>
         {% block body %} Body par défaut {% endblock %}
         <footer>
-            {% include'main/nav.html.twig' %}
         </footer>
     </div>
 </main>
