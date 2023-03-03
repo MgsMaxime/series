@@ -4,6 +4,20 @@
 {% endblock %}
 
 {% block body %}
-    This is the add
+    <h2>Add a new serie</h2>
+
+    {# déclenche l'affichage du formuaire #}
+    {{ form_start(serieForm) }}
+
+    <div class="machin">
+        {# decoupage par chalmps #}
+        {{ form_label(serieForm.name) }}
+        {{ form_widget(serieForm.name) }}
+        {{ form_errors(serieForm.name) }}
+    </div>
+    <button>Add serie !!</button>
+
+    {{ form_end(serieForm) }}
 {% endblock %}
 
+{# début du form #}
