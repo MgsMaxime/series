@@ -21,7 +21,7 @@
                     <img src="{{ asset('img/logo.svg') }}" alt="Series | Home">
                 </a>
             </h1>
-            {% include'main/nav.html.twig' %}
+                {% include'main/nav.html.twig' %}
             {% for label, messages in app.flashes %}
                 {% for message in messages %}
                     <div class="flash flash-{{ label }}">
